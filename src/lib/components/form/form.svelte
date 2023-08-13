@@ -1,5 +1,4 @@
 <script lang="ts">
-    //component types
     type formInput = {
         id: string;
         queryID: string;
@@ -9,7 +8,6 @@
         value: any;
     };
 
-    //component props
     export let endpoint: string = "";
     export let inputs: formInput[] = [];
     export let classes: string = "";

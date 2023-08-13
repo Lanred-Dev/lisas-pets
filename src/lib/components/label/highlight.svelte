@@ -1,17 +1,5 @@
 <script lang="ts">
-    //component props
-    export let link: string | null = null;
-    export let biggerHighlight: boolean = false;
-
-    let classes = biggerHighlight == true ? "rounded-md bg-highlight px-2 font-bold text-primary" : "rounded-sm bg-highlight px-0.5 font-bold text-primary";
+    export let color = "pink";
 </script>
 
-{#if link !== null}
-    <a class={classes} href={link}>
-        <slot />
-    </a>
-{:else}
-    <span class={classes}>
-        <slot />
-    </span>
-{/if}
+<span class="bg-gradient-to-t bg-clip-text text-transparent {color == 'pink' ? 'from-brand-500' : 'from-backgroundSecondary-500'} {color == 'pink' ? 'to-brand-600' : 'to-backgroundSecondary-700'} bg-[length:200%_200%]"><slot /></span>

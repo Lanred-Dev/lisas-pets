@@ -1,27 +1,19 @@
 <script lang="ts">
-    import { onDestroy, onMount } from "svelte";
-    let date: string = new Date().toLocaleString([], { timeZone: "America/Chicago" });
-    let dateInterval: NodeJS.Timer;
-
-    onMount(() => {
-        //update the date in realtime
-        dateInterval = setInterval(() => {
-            date = new Date().toLocaleString([], { timeZone: "America/Chicago" });
-        }, 1000);
-    });
-
-    onDestroy(() => {
-        clearInterval(dateInterval);
-    });
+    import Highlight from "$lib/components/label/highlight.svelte";
 </script>
 
-<header class="relative flex h-screen flex-col items-center justify-center gap-8 bg-backgroundSecondary px-12 py-[15%] md:py-10 lg:h-[80vh]">
-    <div class="z-[1] flex flex-col items-center gap-4">
-        <h1 class="text-4xl md:text-6xl">Cullman Veteran Memorial</h1>
-        <p class="text-lg md:text-2xl lg:max-w-[60%]">The Cullman Veteran Memorial is dedicated to honoring every person whose name is insribed on the Cullman Veteran Memorial in Cullman, AL.</p>
+<header class="relative flex h-screen items-center justify-between px-[15vw] py-[15%]">
+    <div class="z-[1] flex flex-col items-start gap-4 text-left">
+        <h1 class="text-5xl font-black md:text-6xl"><Highlight color="purple">Lisa's Pets</Highlight> <br /> <Highlight color="pink">Toy Breed puppies</Highlight></h1>
+
+        <div class="mt-6 flex gap-5 text-secondary text-lg children:rounded-normal children:border-[2px] children:border-border children:bg-backgroundSecondary children:px-3 children:py-1">
+            <a href="/">About Us</a>
+            <a href="/">Contact</a>
+            <a href="/">See Puppies</a>
+        </div>
     </div>
 
-    <div class="absolute bottom-20 z-[1] rounded-md bg-highlight p-1 px-3">
-        <p class="font-bold text-primary">{date}</p>
+    <div>
+        <img src="/people.png" alt="lisa and melissa" />
     </div>
 </header>

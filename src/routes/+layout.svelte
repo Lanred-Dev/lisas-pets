@@ -1,5 +1,5 @@
 <script lang="ts">
-    //import components
+    import Navbar from "$lib/components/navbar.svelte";
     import "$lib/components/tailwind.css";
 
     import { onMount } from "svelte";
@@ -65,8 +65,10 @@
 </script>
 
 <svelte:head>
-    <title>Cullman Veteran Memorial</title>
+    <title>The Lisa's Pets</title>
 </svelte:head>
+
+<Navbar></Navbar>
 
 <main class="h-auto w-full select-text overflow-hidden text-center font-salmaPro text-primary">
     <slot />
