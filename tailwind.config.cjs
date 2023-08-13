@@ -43,6 +43,7 @@ module.exports = {
                 },
                 border: "#000000",
                 button: "#333333",
+                blue: "#77a2bc",
             },
             borderRadius: {
                 normal: "10px",
